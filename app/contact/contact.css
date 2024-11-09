@@ -1,0 +1,45 @@
+*{
+    overflow: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.contact-para{
+    font-family: "Hammersmith One",sans-serif ;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    font-size: 2.5vw;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+.contact-heading{
+  font-size: 8vw;
+  font-family: "Hammersmith One",sans-serif ;
+  text-shadow: 5px 2px 50px blueviolet;
+  transition: transform;
+  letter-spacing: 4px;
+  margin-top: 4%;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-bottom: 0%;
+}
+
+.contact-heading:hover{
+    text-shadow: 15px 0px 50px blueviolet;
+    transform: scale(1.01) ;
+}
+.social-icon{
+    display: inline-flex;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+.social-icon-set{
+    margin: 4%;
+    font-family: "hammersmith one",sans-serif;
+    display: inline-block; 
+    content: icon;
+}
+.social-icon:hover{
+    color: blueviolet;
+}

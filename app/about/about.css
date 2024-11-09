@@ -1,0 +1,38 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.aboutMe-para{
+    font-family: 'roboto condensed';
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    font-size: 2vw;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+.aboutMe-heading{
+  font-size: 7.5vw;
+  font-family: "Hammersmith One",sans-serif ;
+  text-shadow: 5px 2px 50px blueviolet;
+  transition: transform;
+  letter-spacing: 4px;
+  margin-top: 4%;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-bottom: 0%;
+}
+
+.aboutMe-heading:hover{
+    text-shadow: 15px 0px 50px blueviolet;
+    transform: scale(1.01) ;
+}
+.connect:hover{
+    text-decoration: underline;
+}
+.aboutMe-para > p {
+  background-color: rgb(12, 12, 12);
+  padding: 3%;
+  border-radius: 20px;
+}
