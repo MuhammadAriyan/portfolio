@@ -210,28 +210,24 @@ nav{
     opacity: 0.5;
   }
 }
-
-@keyframes blackOpacity {
-  from{
-    transform: translateY(100%);
-  }to{
-    transform: translateY(0);
-    background: black;
-  }
-}
-
-@keyframes blackOpacityRev {
-  from{
-    transform: translateY(0);
-    background: black;
-  }to{
-    transform: translateY(100%);
-  }
-}
-
 .blackOpacity{
-  animation: blackOpacity 1s linear;
+  position: relative;
 }
-.blackOpacityRev{
-  animation: blackOpacityRev 1s linear;
+.blackOpacity::before{
+  background-color: black;
+  filter: blur(14px);
+  transform: translateX(60deg);
+}
+
+.light .blackOpacity::before {
+  background-color: white;
+  content: '';
+  height: 100%;
+  width: 100%;
+  filter: blur(14px);
+  transform: translateX(60deg);
+}
+
+body{
+  transition: background-color filter transform 1s ease-in-out;
 }
