@@ -87,9 +87,6 @@ nav{
   transition: transform 0.3s ease-in-out;
 }
 .main-para{
-  background: #171717;
-  border-radius: 20px;
-  padding: 10px;
   font-size: 1.6vw;
   font-family: "Hammersmith One",sans-serif ;
   animation: appearBottomOpacity 1s linear;

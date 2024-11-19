@@ -40,7 +40,7 @@ const Page = () => {
           <div className='rightBox box'>
             <h2>Applied Generative AI Engineering (GenEng)</h2>
             <p>2024-Now</p>
-            <p>I'm in the second quarter of the GenEng program, focused on front-end development with Next.js, TypeScript, and core AI skills.</p>
+            <p>I am in the second quarter of the GenEng program, focused on front-end development with Next.js, TypeScript, and core AI skills.</p>
           </div>
         </main>
       </div>
