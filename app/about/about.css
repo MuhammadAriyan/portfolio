@@ -13,7 +13,8 @@
     margin-bottom: 2%;
 }
 .aboutMe-heading{
-  font-size: 7.5vw;
+  font-size: 5vw;
+  display: flex;
   font-family: "Hammersmith One",sans-serif ;
   text-shadow: 5px 2px 50px blueviolet;
   transition: transform;
@@ -25,14 +26,17 @@
 }
 
 .aboutMe-heading:hover{
-    text-shadow: 15px 0px 50px blueviolet;
     transform: scale(1.01) ;
 }
-.connect:hover{
+.connect{
     text-decoration: underline;
 }
 .aboutMe-para > p {
   background-color: rgb(12, 12, 12);
   padding: 3%;
   border-radius: 20px;
+}
+
+.light .aboutMe-para > p {
+  color: antiquewhite;
 }

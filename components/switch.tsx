@@ -1,8 +1,10 @@
 'use client'
 import { Moon, Sun } from 'lucide-react'
 import React, { useState } from 'react'
-import { sleep } from './transitionLink'
 
+const sleep = async(ms:number):Promise<void>=>{
+    return new Promise(resolve=>setTimeout(resolve,ms))
+}
 
 const Switch = () => {
     const [icon,setIcon] = useState(<Sun/>)

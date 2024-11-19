@@ -6,6 +6,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --timelineColor: #131313;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,14 +15,8 @@
     --foreground: #ededed;
   }
 }
-.block{
-  animation: appear linear ;
-  animation-timeline: view();
-  animation-range: entry 0%;
-}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   overflow: none;
    margin: 0%;
@@ -29,12 +24,12 @@ body {
 }
 
 body{
-  background-color: black;
+  background: url('/bg.jpg') no-repeat center/cover;
   color: #ffffff;
   overflow-x: hidden;
+  background-color: #131313;
 }
 /*Nav Bar*/
-
 nav{
   display: flex;
   justify-content: space-between;
@@ -87,15 +82,20 @@ nav{
   display: flex;
   justify-content: center;
   align-items:center ;
-  height: 80vh;
+  height: 90vh;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
 }
 .main-para{
-  opacity:0.5 ;
+  background: #171717;
+  border-radius: 20px;
+  padding: 10px;
   font-size: 1.6vw;
   font-family: "Hammersmith One",sans-serif ;
-  animation: appearTopOpacity 1s linear;
+  animation: appearBottomOpacity 1s linear;
+}
+.light .main-para{
+  background: none;
 }
 .main-heading:hover,.main-para:hover{
   text-shadow: 15px 0px 50px blueviolet;
@@ -133,6 +133,12 @@ nav{
   border-radius: 25%;
   color: #ffffff;
   border: 2px solid white;
+  background: #131313;
+  opacity: 0.6;
+}
+.light .main-icon{
+  background: transparent;
+  opacity: 1;
 }
 
 .btn-theme{
@@ -146,12 +152,13 @@ nav{
   padding: .5%;
 }
 .top-section{
-  animation: appearTop 1s linear;
+  animation: appearBottom 1s linear;
 }
 
 /*LIGHT THEME*/
 
 .light{
+  background: url('/lightbg.jpg') no-repeat center;
   background-color: white;
   color: black;
 }
@@ -190,13 +197,22 @@ nav{
 @keyframes appear {
   from{
     opacity: 0;
-    scale: 0.5;
+    scale: 0.9;
   }to{
     opacity: 1;
     scale: 1;
   }
 }
 
+@keyframes appearBottom{
+  from{
+    transform:translateY(50%);
+    opacity: 0;
+  }to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes appearTop{
   from{
     transform:translateY(-50%);
@@ -204,6 +220,15 @@ nav{
   }to{
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes appearBottomOpacity{
+  from{
+    transform:translateY(50%);
+    opacity: 0;
+  }to{
+    transform: translateY(0);
+    opacity: .5;
   }
 }
 
@@ -225,28 +250,162 @@ nav{
   animation: appearTop .5s ease-in-out;
 }
 
+body {
+  transition: background .5s ease-in-out;
+}
+.education-box {
+  display: flex;
+  background-color: var(--timelineColor);
+  border-radius: 25px;
+  justify-content: center;
+  color: #eaeaea;
+  align-items: center;
+  position: relative;
+  margin: 2vw ;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.timeline  {
+  padding: 0.52vw 2.5vw;
+  background: #0a0a0a;
+  font-family: 'Roboto condensed';
+  font-size:2vw;
+  border-radius: 20px;
+  width: 92vw;
+  font-size: xx-small;
+  display: flexbox;
+  justify-items: center;
+  margin: 1vw;
+}
+.timeline div {
+  background-color: var(--timelineColor);
+  margin: 3vh;
+  border-radius: 10px;
+}
 
-@keyframes appearTopOpacity{
+.timeline::after{
+  width: 0.4vw;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0% ;
+  left: 50%;
+  background: var(--timelineColor);
+  animation: line ease-in;
+  animation-timeline: view();
+  animation-range:entry -900% ;
+}
+
+.timeline[data-visible="true"]::after {
+  animation: line 1s forwards;
+}
+  
+@keyframes line{
   from{
-    transform:translateY(-50%);
-    opacity: 0;
+    height: 0%;
   }to{
-    transform: translateY(0);
-    opacity: 0.5;
+    height: 100%;
   }
 }
-.blackOpacity {
-  filter: blur(14px);
-  transform: scale(600px);
-  transition: background-color 1s ease-in-out, filter 1s ease-in-out, transform 1s ease-in-out;
+
+.leftBox{
+  transform: translateX(22.67vw);
+  padding: 1vw;
+  width: 40vw;
 }
 
-.light .blackOpacity {
-  filter: blur(14px);
-  transform: scale(120px); 
-  transition: background-color 1s ease-in-out, filter 1s ease-in-out, transform 1s ease-in-out;
+.rightBox{
+  transform: translateX(-22.67vw);
+  padding: 1vw;
+  width: 40vw;
 }
 
-body {
-  transition: background-color 1s ease-in-out;
+.rightBox::before,
+.leftBox::before  {
+  content: '';
+  border: 1px solid var(--timelineColor);
+  width: 2.9vw;
+  height: 0.3vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--timelineColor);
+  animation: linebox linear;
+  animation-timeline: view() ;
+  animation-range:entry -15% ;
 }
+
+@keyframes linebox{
+  from{
+    height: 0%;
+  }to{
+    height: 0.3vw;
+  }
+}
+
+.leftBox::before{
+  left: -6%;
+}
+.rightBox::before{
+  right: -7%;
+}
+.box{
+  animation: appear ease-in-out ;
+  animation-timeline: view();
+  animation-range: entry 15%;
+}
+.box p {
+  color: var(--textColor);
+}
+.light p {
+   color: #3b3b3b;
+}
+
+.light .timeline {
+  background-color: rgb(250, 246, 246); 
+  padding: 20px;
+}
+
+.box h2{
+  color: #ffffff;
+}
+.light .box h2{
+  color: #0a0a0a;
+}
+
+.light {
+  --timelineColor: #eaeaea; 
+  --textColor:#ededed
+}
+
+.eduH{
+  font-size: 5vw;
+  display: flex;
+  justify-self: center;
+}
+.light .book,.light .share,.light .cookie{
+  color: #131313;
+}
+
+.book:hover,.btn-theme:hover,.share:hover,.cookie:hover{
+  transform: rotate(10deg);
+}
+
+@keyframes rotateIcons{
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(20deg);
+  }
+}
+
+.book,.share,.cookie{
+  animation: rotateIcons ease-in-out ;
+  animation-timeline: view();
+  animation-range: entry 20%;
+  width: 2.7vw;
+}
+.share{
+  width: 3vw;
+}
+
+

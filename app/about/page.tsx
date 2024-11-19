@@ -1,10 +1,11 @@
 import React from 'react'
 import '@/app/about/about.css'
 import Link from 'next/link'
+import { Cookie } from 'lucide-react'
 const page = () => {
   return (
-    <div>
-      <h1 className='aboutMe-heading top-section'>ABOUT ME</h1>
+    <div className=''>
+      <h1 className='aboutMe-heading top-section'>About me<Cookie className='cookie'/></h1>
       <div>
         <div className="aboutMe-para top-section">
           <p>Hey there! I’m

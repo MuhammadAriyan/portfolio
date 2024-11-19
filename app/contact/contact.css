@@ -8,13 +8,14 @@
     font-family: "Hammersmith One",sans-serif ;
     word-spacing: 10px;
     letter-spacing: 2px;
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 2%;
 }
 .contact-heading{
-  font-size: 8vw;
+  font-size: 5vw;
+  display: flex;
   font-family: "Hammersmith One",sans-serif ;
   text-shadow: 5px 2px 50px blueviolet;
   transition: transform;
@@ -26,7 +27,6 @@
 }
 
 .contact-heading:hover{
-    text-shadow: 15px 0px 50px blueviolet;
     transform: scale(1.01) ;
 }
 .social-icon{
